@@ -21,6 +21,7 @@
     "@angular/router": "^19.2.0",
     "@angular/ssr": "^19.2.16",
     "@fortawesome/fontawesome-free": "^7.0.1",
+    "@netlify/angular-runtime": "^3.0.0",
     "@types/pdfmake": "^0.2.11",
     "bootstrap": "^5.3.8",
     "chart.js": "^4.5.0",
