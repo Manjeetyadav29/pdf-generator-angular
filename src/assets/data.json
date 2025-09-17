@@ -1,0 +1,10 @@
+[
+  { "state": "New South Wales", "population": 7238819 },
+  { "state": "Victoria", "population": 5608700 },
+  { "state": "Queensland", "population": 4007600 },
+  { "state": "South Australia", "population": 1607700 },
+  { "state": "Western Australia", "population": 2232000 },
+  { "state": "Tasmania", "population": 518000 },
+  { "state": "Northern Territory", "population": 245000 },
+  { "state": "Australian Capital Territory", "population": 431000 }
+]

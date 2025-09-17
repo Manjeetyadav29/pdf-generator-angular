@@ -1,0 +1,11 @@
+<div id="chart-section" class="text-center">
+    <h3 class="mb-3">Australian Population (Pie Chart)</h3>
+
+    <div *ngIf="loading" class="mb-3">Loading chart...</div>
+    <div *ngIf="error" class="text-danger mb-3">{{ error }}</div>
+
+    <div *ngIf="!loading && !error" id="chart-canvas-wrapper" style="max-width:700px; margin: 0 auto;">
+        <canvas id="chartCanvas" baseChart [data]="pieChartData" [type]="pieChartType"
+            style="width:100%; height:420px;"></canvas>
+    </div>
+</div>

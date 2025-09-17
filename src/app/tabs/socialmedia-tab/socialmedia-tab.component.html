@@ -1,0 +1,72 @@
+<div id="social-section" class="social-media-container">
+    <div class="container-fluid">
+        <div class="row g-4 justify-content-center">
+
+            <div class="col-12 col-md-6 col-lg-4"
+                *ngFor="let platform of socialMediaPlatforms; trackBy: trackByPlatform">
+                <div class="social-card h-100" [style.background-color]="platform.backgroundColor"
+                    [style.color]="platform.textColor" [attr.data-platform]="platform.id">
+
+                    <div class="social-card-header">
+                        <div class="social-icon">
+                            <img crossorigin="anonymous" [src]="platform.icon" [alt]="platform.name + ' Logo'"
+                                class="platform-logo" onerror="this.style.display='none'" />
+                        </div>
+
+                        <div class="connection-status" [class.connected]="platform.isConnected"
+                            [title]="platform.isConnected ? 'Connected' : 'Not Connected'">
+                            <i class="fas" [ngClass]="{ 'fa-check-circle': platform.isConnected,
+                                'fa-times-circle': !platform.isConnected }"></i>
+                        </div>
+                    </div>
+                    <h2 class="platform-name">{{ platform.name }}</h2>
+
+                    <p class="platform-description">{{ platform.description }}</p>
+
+                    <div class="platform-stats" *ngIf="platform.isConnected">
+                        <div class="stat-item">
+                            <span class="stat-number">{{ platform.followers | number }}</span>
+                            <span class="stat-label">Followers</span>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-item">
+                            <span class="stat-number">{{ platform.posts | number }}</span>
+                            <span class="stat-label">Posts</span>
+                        </div>
+                    </div>
+
+                    <div class="card-actions">
+                        <button class="btn social-btn-primary" [style.background-color]="platform.buttonColor"
+                            [style.color]="platform.buttonTextColor" [style.border-color]="platform.buttonColor"
+                            (click)="onReadMore(platform)">
+                            {{ getButtonText(platform) }}
+                        </button>
+                        <div class="secondary-actions" *ngIf="platform.isConnected">
+                            <button class="btn btn-sm social-btn-secondary" [style.color]="platform.textColor"
+                                [style.border-color]="platform.textColor" (click)="sharePlatform(platform, $event)"
+                                title="Share Profile">
+                                <i class="fas fa-share-alt"></i>
+                                Share
+                            </button>
+
+                            <button class="btn btn-sm social-btn-secondary" [style.color]="platform.textColor"
+                                [style.border-color]="platform.textColor" (click)="disconnectFromPlatform(platform)"
+                                title="Disconnect">
+                                <i class="fas fa-unlink"></i>
+                                Disconnect
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-overlay"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="loading-overlay" *ngIf="false">
+    <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+    <p class="loading-text">Connecting to platform...</p>
+</div>
