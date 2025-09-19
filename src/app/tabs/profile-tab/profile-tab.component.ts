@@ -14,9 +14,7 @@ export class ProfileTabComponent {
     location: 'New York, United States',
     role: 'Web Producer - Web Specialist',
     education: 'Columbia University - New York',
-    avatar: '',
-    coverImage:
-      'https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80',
+    avatar: 'assets/images/avatar.jpg',
     stats: {
       friends: 65,
       photos: 43,

@@ -4,6 +4,7 @@
         <div class="circle circle-2"></div>
         <div class="circle circle-3"></div>
     </div>
+
     <div class="profile-card">
         <div class="avatar-container">
             <div class="avatar">
@@ -14,22 +15,16 @@
 
         <div class="profile-actions-top">
             <button class="btn-connect" (click)="connect()" [class.connected]="isConnected">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
-                    <circle cx="9" cy="7" r="4"></circle>
-                    <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
-                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                </svg>
+                <i class="bi bi-person-plus"></i>
                 {{ isConnected ? 'Connected' : 'Connect' }}
             </button>
 
             <button class="btn-message" (click)="message()">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-                </svg>
+                <i class="bi bi-chat-dots"></i>
                 Message
             </button>
         </div>
+
         <div class="user-info">
             <h1 class="user-name">{{ user.name }}</h1>
             <p class="user-location">{{ user.location }}</p>
@@ -42,6 +37,7 @@
                 <span class="mutual-count">{{ user.mutualFriends }} mutual friends</span>
             </div>
         </div>
+
         <div class="user-stats">
             <div class="stat-item" (click)="viewFriends()">
                 <div class="stat-number">{{ user.stats.friends }}</div>
@@ -78,30 +74,17 @@
 
             <div class="additional-actions">
                 <button class="btn-secondary" (click)="toggleFollow()">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path
-                            d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.51 4.04 3 5.5l11 11z">
-                        </path>
-                    </svg>
+                    <i class="bi bi-heart"></i>
                     {{ isFollowing ? 'Unfollow' : 'Follow' }}
                 </button>
 
                 <button class="btn-secondary" (click)="shareProfile()">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="18" cy="5" r="3"></circle>
-                        <circle cx="6" cy="12" r="3"></circle>
-                        <circle cx="18" cy="19" r="3"></circle>
-                        <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
-                        <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
-                    </svg>
+                    <i class="bi bi-share"></i>
                     Share
                 </button>
 
                 <button class="btn-secondary btn-report" (click)="reportProfile()">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path>
-                        <line x1="4" y1="22" x2="4" y2="15"></line>
-                    </svg>
+                    <i class="bi bi-flag"></i>
                     Report
                 </button>
             </div>
